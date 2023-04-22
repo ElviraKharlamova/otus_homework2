@@ -1,4 +1,4 @@
-from homework2.books import Book
+from homework2.Book import Book
 
 
 class BookDTO:
