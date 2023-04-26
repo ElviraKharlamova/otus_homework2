@@ -16,4 +16,7 @@ class Result:
             userJsons.append(json.dumps(user, default=serialize_user))
 
         new_json = json.dumps(userJsons, indent=4)
-        return new_json
+        # print(new_json)
+
+        with open('result.json', 'w') as f:
+            f.write(new_json)
