@@ -11,7 +11,8 @@ class BookDTO:
             self.Pages = book.Pages
         else:
             raise ValueError
-def serialize_book(book):
-    return {"Title": book.Title, "Author": book.Author, "Genre": book.Genre, "Pages": book.Pages}
 
+
+def serialize_book(book):
+        return book.__dict__
 

@@ -14,7 +14,8 @@ class UserDTO:
         else:
             raise ValueError
 
+
 def serialize_user(user):
-    return {"name": user.name, "gender": user.gender, "address": user.address, "age": user.age, "books": [serialize_book(book) for book in user.books]}
-
-
+    res = user.__dict__
+    res["books"] = [serialize_book(book) for book in user.books]
+    return res

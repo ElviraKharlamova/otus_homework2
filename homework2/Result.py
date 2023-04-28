@@ -11,12 +11,11 @@ class Result:
         userDTOs = []
         for userwithbooks in userswithbooks:
             userDTOs.append(UserDTO(userwithbooks))
+
+
         userJsons = []
         for user in userDTOs:
-            userJsons.append(json.dumps(user, default=serialize_user))
-
-        new_json = json.dumps(userJsons, indent=4)
-        # print(new_json)
+            userJsons.append(user)
 
         with open('result.json', 'w') as f:
-            f.write(new_json)
+            json.dump(userJsons, f, default=serialize_user, indent=4)
